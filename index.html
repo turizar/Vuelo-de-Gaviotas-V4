@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- Preconnect: Establece conexión temprana con dominios externos (mejora velocidad de carga) -->
+  <link rel="preconnect" href="https://www.google.com">
+  <link rel="preconnect" href="https://www.google.com/maps">
+  <link rel="preconnect" href="https://upload.wikimedia.org">
+  <link rel="preconnect" href="https://cdn-icons-png.flaticon.com">
+  
+  <!-- Favicon: Icono que aparece en la pestaña del navegador -->
+  <link rel="icon" type="image/png" href="images/logo-vuelodegaviotas2.ico">
+  <link rel="apple-touch-icon" href="images/logo-vuelodegaviotas2.png">
+  
+  <!-- Theme Color: Color de la barra de estado en móviles -->
+  <meta name="theme-color" content="#014f68">
+  <!-- Meta Description: Aparece en los resultados de búsqueda de Google. Debe incluir palabras clave principales y ser atractivo (150-160 caracteres) -->
+  <meta name="description" content="Arriendo en el sur de Chile - Cabañas en Pelluhue y Curanipe. Arriendo en Pelluhue y cabañas en Curanipe frente al mar. Alojamiento familiar con capacidad para 2 a 8 personas. Estacionamiento, quinchos, tinaja. Reserva ahora." />
+  <!-- Meta Keywords: Palabras clave relevantes para SEO (aunque Google ya no las usa mucho, algunos buscadores sí) -->
+  <meta name="keywords" content="arriendo en el sur de Chile, arriendo en Pelluhue, cabañas en Curanipe, cabañas en el sur de Chile, cabañas Pelluhue, arriendo Curanipe, alojamiento Pelluhue, alojamiento Curanipe, cabañas frente al mar, arriendo cabañas Pelluhue, cabañas familiares Pelluhue, vacaciones Pelluhue, turismo Curanipe" />
+  <meta name="author" content="Vuelo de Gaviotas" />
+  <!-- Robots: Indica a los buscadores que indexen esta página y sigan los enlaces -->
+  <meta name="robots" content="index, follow" />
+  <!-- Canonical URL: Evita contenido duplicado. Si hay varias URLs con el mismo contenido, esta es la "oficial" -->
+  <link rel="canonical" href="https://www.vuelodegaviotas.com/" />
+  <title>Arriendo en Pelluhue | Cabañas en Curanipe | Arriendo en el Sur de Chile | Vuelo de Gaviotas</title>
+  <!-- Google Fonts: Tipografías modernas para mejor diseño -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Open Graph: Meta tags para cuando alguien comparte tu página en Facebook, LinkedIn, etc. -->
+  <!-- Controlan cómo se ve el preview cuando compartes el link en redes sociales -->
+  <meta property="og:title" content="Arriendo en Pelluhue | Cabañas en Curanipe | Arriendo en el Sur de Chile" />
+  <meta property="og:description" content="Arriendo en el sur de Chile. Arriendo en Pelluhue y cabañas en Curanipe. Alojamiento familiar frente al mar con todas las comodidades. Reserva ahora." />
+  <meta property="og:image" content="https://www.vuelodegaviotas.com/images/cabin-6-terrace.jpg" />
+  <meta property="og:url" content="https://www.vuelodegaviotas.com" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_CL" />
+  
+  <!-- Twitter Card: Similar a Open Graph pero específico para Twitter -->
+  <!-- Define cómo se ve el preview cuando compartes en Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Cabañas en Pelluhue/Curanipe | Vuelo de Gaviotas" />
+  <meta name="twitter:description" content="Arriendo de cabañas frente al mar en Pelluhue y Curanipe, sur de Chile" />
+  <meta name="twitter:image" content="https://www.vuelodegaviotas.com/images/cabin-6-terrace.jpg" />
+  
+  <!-- Structured Data (JSON-LD): Código que ayuda a Google a entender mejor tu negocio -->
+  <!-- Permite que Google muestre "rich snippets" en los resultados de búsqueda con información extra -->
+  <!-- Tipo "LodgingBusiness" = Negocio de alojamiento (cabañas, hoteles, etc.) -->
+  <!-- Esto puede hacer que aparezcas en búsquedas con estrellas, precios, características, etc. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LodgingBusiness",
+    "name": "Vuelo de Gaviotas",
+    "description": "Arriendo en el sur de Chile. Arriendo en Pelluhue y cabañas en Curanipe. Alojamiento familiar frente al mar.",
+    "image": "https://www.vuelodegaviotas.com/images/logo-vuelodegaviotas2.png",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Pelluhue",
+      "addressRegion": "Región del Maule",
+      "addressCountry": "CL"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "-35.836126",
+      "longitude": "-72.624120"
+    },
+    "telephone": "+56993205308",
+    "email": "oscarhaag1@gmail.com",
+    "priceRange": "$$",
+    "amenityFeature": [
+      {
+        "@type": "LocationFeatureSpecification",
+        "name": "Estacionamiento"
+      },
+      {
+        "@type": "LocationFeatureSpecification",
+        "name": "Vista al mar"
+      },
+      {
+        "@type": "LocationFeatureSpecification",
+        "name": "Quinchos"
+      },
+      {
+        "@type": "LocationFeatureSpecification",
+        "name": "Tinaja de agua caliente"
+      },
+      {
+        "@type": "LocationFeatureSpecification",
+        "name": "Acepta mascotas"
+      }
+    ],
+    "url": "https://www.vuelodegaviotas.com"
+  }
+  </script>
+  
+  <!-- BreadcrumbList: Ayuda a Google a entender la estructura de navegación del sitio -->
+  <!-- Mejora la visualización en resultados de búsqueda con "migas de pan" -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Inicio",
+        "item": "https://www.vuelodegaviotas.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Cabañas en Pelluhue",
+        "item": "https://www.vuelodegaviotas.com/#cabins"
+      }
+    ]
+  }
+  </script>
+</head>
+
+ <!-- Botones flotantes de contacto: Siempre visibles para facilitar la conversión -->
+ <!-- Whatsapp Icon: Botón flotante para contacto rápido por WhatsApp -->
+ <a href="https://wa.me/56993205308" class="whatsapp-float" target="_blank" rel="noopener noreferrer" title="Habla con nosotros por WhatsApp" aria-label="Contactar por WhatsApp">
+   <!-- Imagen externa: Considera descargar y alojar localmente para mejor rendimiento -->
+   <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Icono WhatsApp - Contactar" class="whatsapp-icon" width="30" height="30" loading="lazy">
+ </a>
+
+ <!-- Call Icon: Botones flotantes para llamadas telefónicas -->
+ <div class="call-buttons" role="group" aria-label="Botones de llamada telefónica">
+   <!-- First Call Icon: Teléfono principal -->
+   <a href="tel:+56993205308" class="call-float primary-call" title="Llamar al teléfono principal" aria-label="Llamar al +56 9 9320 5308">
+     <!-- Imagen externa: Considera descargar y alojar localmente para mejor rendimiento -->
+     <img src="https://cdn-icons-png.flaticon.com/512/724/724664.png" alt="Icono teléfono - Llamar" class="call-icon-2" width="35" height="35" loading="lazy">
+   </a>
+
+   <!-- Second Call Icon: Teléfono secundario (se expande al hacer clic en el principal) -->
+   <a href="tel:+56974892591" class="call-float secondary-call" title="Llamar al teléfono secundario" aria-label="Llamar al +56 9 7489 2591">
+     <img src="https://cdn-icons-png.flaticon.com/512/724/724664.png" alt="Icono teléfono secundario - Llamar" class="call-icon-2" width="35" height="35" loading="lazy">
+   </a>
+ </div>
+
+
+
+<body>
+  <header>
+    <div class="container">
+      <!-- Logo: Usamos div en lugar de h1 porque el H1 principal está en el hero -->
+      <!-- Solo debe haber UN H1 por página para SEO -->
+      <div class="logo">
+        <img src="images/logo-vuelodegaviotas2.png" alt="Logo Vuelo de Gaviotas - Cabañas en Pelluhue" width="50" height="33" loading="eager">
+        <a href="#home" aria-label="Ir al inicio">Vuelo de Gaviotas</a>
+      </div>
+      
+      <nav id="nav" role="navigation" aria-label="Navegación principal">
+        <ul>
+          <li><a href="#cabins" aria-label="Ver nuestras cabañas">Cabañas</a></li>
+          <li><a href="#surroundings" aria-label="Ver atracciones cercanas">Atracciones</a></li>
+          <li><a href="#contact" aria-label="Contactar para reservas">Contáctanos</a></li>
+          <li><a href="#map" aria-label="Ver ubicación en mapa">Mapa</a></li>
+          <li><a href="#faq" aria-label="Ver preguntas frecuentes">FAQ</a></li>
+        </ul>
+      </nav>
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú de navegación" aria-expanded="false">&#9776;</button>
+    </div>
+  </header>
+
+  <section id="home" class="hero" role="banner">
+    <!-- Hero Slides: Imágenes de fondo del carrusel -->
+    <!-- Nota: loading="lazy" no funciona en background-image, pero las imágenes se cargan bajo demanda con JS -->
+    <div class="hero-slide" style="background-image: url('images/edificio principal.jpg');" aria-hidden="true"></div>
+    <div class="hero-slide" style="background-image: url('images/garden1.jpg');" aria-hidden="true"></div>
+    <div class="hero-slide active" style="background-image: url('images/terraza exterior area comun.jpg');" aria-hidden="true"></div>
+    <div class="hero-slide" style="background-image: url('images/cabin 4 - 1 bed.jpg');" aria-hidden="true"></div>
+    <div class="overlay">
+      <!-- H1: El título principal de la página. Debe incluir palabras clave principales para SEO -->
+      <!-- Solo debe haber UN H1 por página (es la regla más importante de SEO) -->
+      <h1>Cabañas en Pelluhue/Curanipe - Arriendo Frente al Mar</h1>
+      <!-- Hero Subtitle: Subtítulo descriptivo que complementa el H1 y mejora la experiencia del usuario -->
+      <p class="hero-subtitle">Alojamiento familiar en el sur de Chile con todas las comodidades</p>
+      <!-- Botón CTA (Call To Action): Llamado a la acción que guía al usuario hacia las cabañas -->
+      <!-- Los botones CTA mejoran la conversión (más reservas) -->
+      <a href="#cabins" class="btn-hero">Ver Cabañas</a>
+    </div>
+    <button class="carousel-control left" id="prevSlide" aria-label="Imagen anterior">&#10094;</button>
+    <button class="carousel-control right" id="nextSlide" aria-label="Imagen siguiente">&#10095;</button>
+  </section>
+
+  <section id="aboutus" class="section">
+    <h2>Cabañas en Arriendo en Pelluhue/Curanipe - <strong>Sur de Chile</strong></h2>
+    <p>Bienvenido a <strong>Vuelo de Gaviotas</strong>, tu destino ideal para unas vacaciones perfectas en el sur de Chile. Nuestro complejo de <strong>cabañas en arriendo</strong> está ubicado estratégicamente entre Pelluhue y Curanipe, ofreciendo <strong>alojamiento familiar frente al mar</strong>. Cómodas cabañas para 2 a 8 personas, todas con <strong>vista directa al océano</strong> y completamente equipadas para tu máximo confort.</p>
+
+    <p>Nuestras cabañas están diseñadas para familias y grupos que buscan relajarse y disfrutar de la naturaleza. Solo cruza la calle y estarás en una amplia y hermosa <strong>playa</strong> perfecta para relajarte, hacer surf o simplemente disfrutar del sonido de las olas.</p>
+
+    <p>En nuestro complejo contamos con estacionamiento privado, áreas verdes para disfrutar del aire libre, quinchos equipados para compartir momentos especiales con tu familia o amigos, y una tinaja de agua caliente con capacidad para cinco personas, ideal para una experiencia de descanso inigualable después de un día en la playa.</p>
+  </section>
+
+  <section id="cabins" class="section">
+    <!-- H2: Subtítulos que organizan el contenido. Deben incluir palabras clave secundarias -->
+    <h2>Nuestras Cabañas</h2>
+    <!-- Section Intro: Texto introductorio que enriquece el contenido con palabras clave naturales -->
+    <!-- Ayuda a Google a entender el contexto y mejora el SEO -->
+    <p class="section-intro">Descubre nuestras cabañas disponibles para arriendo. Todas están en el mismo complejo, ubicado entre Pelluhue y Curanipe en el sur de Chile. Cada una está diseñada para ofrecerte la mejor experiencia de alojamiento.</p>
+    <div class="grid">
+      <div class="card" id="cabin0">
+        <a href="cabin0.html">
+          <!-- Alt text: Descripción de la imagen para SEO y accesibilidad -->
+          <!-- Debe ser descriptivo e incluir palabras clave relevantes -->
+          <!-- loading="lazy": Carga la imagen solo cuando el usuario hace scroll (mejora velocidad) -->
+          <img src="images/cabin 0 - living room.jpg" alt="Arriendo en Pelluhue - Cabaña para 3 personas - Cabaña Familiar 0" loading="lazy" width="350" height="250">
+          <h3>Cabaña Familiar 0</h3>
+          <p>Para hasta 3 personas. Vista al mar y todas las comodidades incluidas.</p>
+          <span class="card-link-text">Ver detalles →</span>
+        </a>
+      </div>
+      <div class="card" id="cabin1">
+        <a href="cabin1.html">
+          <img src="images/cabin 1 - living room.jpg" alt="Arriendo en Pelluhue - Cabaña primera línea de playa para 8 personas - Cabaña Familiar 1" loading="lazy" width="350" height="250">
+          <h3>Cabaña Familiar 1</h3>
+          <p>Primera línea de playa, ideal para adultos mayores. Acceso fácil y capacidad para 8 personas.</p>
+          <span class="card-link-text">Ver detalles →</span>
+        </a>
+      </div>
+      <div class="card" id="cabin2">
+        <a href="cabin2.html">
+          <img src="images/cabin 2 - living room.jpg" alt="Cabañas en Curanipe - Arriendo cabaña para 6 personas - Cabaña Familiar 2" loading="lazy" width="350" height="250">
+          <h3>Cabaña Familiar 2</h3>
+          <p>Perfecta para 6 personas. Comodidad y funcionalidad garantizadas para toda la familia.</p>
+          <span class="card-link-text">Ver detalles →</span>
+        </a>
+      </div>
+      <div class="card" id="cabin3">
+        <a href="cabin3.html">
+          <img src="images/cabin 3 - living room kitchen.jpg" alt="Arriendo en Pelluhue - Cabaña grande para 7 personas - Cabaña Familiar 3" loading="lazy" width="350" height="250">
+          <h3>Cabaña Familiar 3</h3>
+          <p>Para hasta 7 personas. Ideal para grupos grandes o familias extensas. Espaciosa y cómoda.</p>
+          <span class="card-link-text">Ver detalles →</span>
+        </a>
+      </div>
+      <div class="card" id="cabin4">
+        <a href="cabin4.html">
+          <img src="images/cabin 4 - living room.jpg" alt="Arriendo en Pelluhue - Cabaña con mejor vista al mar - Cabaña Familiar 4 segunda planta" loading="lazy" width="350" height="250">
+          <h3>Cabaña Familiar 4</h3>
+          <p>La mejor vista al mar desde el segundo piso. Capacidad para 7 personas con vista privilegiada.</p>
+          <span class="card-link-text">Ver detalles →</span>
+        </a>
+      </div>
+      <div class="card" id="cabin6">
+        <a href="cabin6.html">
+          <img src="images/cabin 6 - terrace.jpg" alt="Arriendo en Pelluhue - Cabaña romántica para parejas - Cabaña Familiar 6" loading="lazy" width="350" height="250">
+          <h3>Cabaña Familiar 6</h3>
+          <p>Ideal para parejas. Vista panorámica de 180° al océano desde su terraza privada.</p>
+          <span class="card-link-text">Ver detalles →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="section light">
+    <ul class="features">
+      <li data-images="images/parking1.jpg,images/parking2.jpg">
+        <span>Estacionamiento</span>
+        <small>Ver fotos</small>
+      </li>
+      <li data-images="images/garden2.jpg,images/garden3.jpg,images/garden1.jpg">
+        <span>Áreas verdes</span>
+        <small>Ver fotos</small>
+      </li>
+      <li data-images="images/quincho1.jpg,images/quincho2.jpg,images/quincho3.jpg">
+        <span>Quinchos</span>
+        <small>Ver fotos</small>
+      </li>
+      <li data-images="images/surrounding1.jpg,images/surrounding2.jpg">
+        <span>Entorno</span>
+        <small>Ver fotos</small>
+      </li>
+      <li data-images="images/hot-tub2.jpg,images/hot-tub3.jpg">
+        <span>Tinaja $25.000p/h</span>
+        <small>Ver fotos</small>
+      </li>
+    </ul>
+  </section>
+  
+
+  <section id="surroundings" class="section">
+    <h2>Atracciones y Actividades en Pelluhue/Curanipe</h2>
+    <p>Descubre la exquisita gastronomía marina de Pelluhue y Curanipe, donde cada plato es una celebración de sabores frescos del océano. Esta encantadora zona costera del sur de Chile te espera con un sinfín de aventuras: surf y bodyboard en impresionantes olas, pesca deportiva a orilla del mar, y actividades para todos los gustos.</p>
+    
+    <p>Explora los parques nacionales cercanos en caminatas inolvidables, recorriendo senderos rodeados de una exuberante flora y fauna. La Región del Maule es un verdadero paraíso para los amantes de la naturaleza, ideal para desconectar y reconectar con lo esencial. Nuestras <strong>cabañas</strong> son el punto de partida perfecto para vivir estas experiencias.</p>
+    
+    <p>En <strong>Vuelo de Gaviotas</strong> no solo encontrarás un alojamiento, sino una <strong>experiencia única</strong>. Con atención cercana y personalizada, en un entorno donde la tranquilidad, la diversión y la aventura se combinan para crear <strong>recuerdos inolvidables</strong>.</p>
+    
+    <p>¡Ven a descubrir todo lo que esta hermosa zona tiene para ti! Reserva tu <strong>arriendo de cabaña</strong> ahora y comienza tu aventura en el sur de Chile.</p>
+    <div class="grid">
+      <div class="card">
+        <img src="images/Surf en curanipe.jpg" alt="Surf en Curanipe - Actividad cerca de cabañas en Pelluhue" loading="lazy" width="350" height="250">
+        <h3>Surf en Curanipe</h3>
+        <p>Curanipe es uno de los destinos favoritos de surfistas por sus potentes olas y ambiente relajado frente al Pacífico. Perfecto para quienes buscan alojamiento en Curanipe.</p>
+      </div>
+
+      <div class="card">
+        <img src="images/Reserva nacional federico albert.jpg" alt="Reserva Forestal Federico Albert cerca de cabañas en Pelluhue" loading="lazy" width="350" height="250">
+        <h3>Reserva Forestal Federico Albert</h3>
+        <p>Un pulmón verde en Chanco, ideal para caminatas, avistamiento de aves y contacto con la flora nativa del Maule. A poca distancia de nuestras cabañas en el sur de Chile.</p>
+      </div>
+
+      <div class="card">
+        <img src="images/caleta curanipe.jpeg" alt="Caleta de Pescadores Curanipe - Atracción cerca de alojamiento Pelluhue" loading="lazy" width="350" height="250">
+        <h3>Caleta de Pescadores</h3>
+        <p>Descubre la vida marina en esta caleta tradicional, donde puedes ver zarpar los botes y probar mariscos frescos. Ideal excursión desde tu cabaña en Pelluhue.</p>
+      </div>
+
+      <div class="card">
+        <img src="images/Salto del gato.jpg" alt="Saltos del Gato - Atracción natural cerca de arriendo en Pelluhue" loading="lazy" width="350" height="250">
+        <h3>Saltos del Gato</h3>
+        <p>Hermosas caídas de agua entre senderos rurales, perfectas para los amantes de la naturaleza y la fotografía. Excursión desde tu alojamiento en Pelluhue.</p>
+      </div>
+
+      <div class="card">
+        <img src="images/iglesia de piedra.jpg" alt="Iglesia de Piedra Pelluhue - Atracción turística cerca de cabañas" loading="lazy" width="350" height="250">
+        <h3>Iglesia de Piedra</h3>
+        <p>Una formación rocosa natural junto al mar que simula una catedral, moldeada por el viento y las olas durante siglos. Visita desde tu cabaña en arriendo en Pelluhue.</p>
+      </div>
+
+      <div class="card">
+        <img src="images/arcos de calan.jpg" alt="Arcos de Calán - Formación rocosa cerca de cabañas en Curanipe" loading="lazy" width="350" height="250">
+        <h3>Arcos de Calán</h3>
+        <p>Formaciones rocosas en la costa que crean arcos naturales sobre el mar, ideales para explorar en marea baja. A poca distancia de nuestras cabañas en Pelluhue.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <h2>Reserva tu Cabaña en Pelluhue/Curanipe</h2>
+    <!-- Contact Intro: Texto que incluye palabras clave de búsqueda de forma natural -->
+    <!-- Mejora el SEO local (búsquedas como "arriendo cabañas pelluhue") -->
+    <p class="contact-intro">¿Buscas <strong>arriendo en Pelluhue/Curanipe</strong>? Nuestro complejo está ubicado entre ambos pueblos en el sur de Chile. Contáctanos ahora para reservar tu cabaña. Estamos disponibles para responder todas tus consultas y ayudarte a planificar tu <strong>estadía perfecta</strong>.</p>
+    <div class="contact-info">
+      <!-- Enlaces tel: y mailto: hacen que los números sean clicables en móviles -->
+      <!-- Esto mejora la experiencia del usuario y puede aumentar las conversiones -->
+      <p class="contact-phones">📞 Teléfono Principal: <a href="tel:+56993205308">+56 9 9320 5308</a></p>
+      <p class="contact-phones">📞 Teléfono Secundario: <a href="tel:+56974892591">+56 9 7489 2591</a></p>
+      <p class="contact-emails">📧 Email: <a href="mailto:oscarhaag1@gmail.com">oscarhaag1@gmail.com</a></p>
+      <p class="contact-cta">💬 También puedes contactarnos por WhatsApp haciendo clic en el botón flotante</p>
+    </div>
+  </section>
+
+  <section id="map" aria-label="Ubicación de las cabañas">
+    <!-- Google Maps iframe: Mapa interactivo de la ubicación -->
+    <!-- loading="lazy": Carga el mapa solo cuando el usuario hace scroll hasta aquí (mejora velocidad inicial) -->
+    <!-- title: Importante para accesibilidad, describe el contenido del iframe -->
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3846.5202403361236!2d-72.6241199768523!3d-35.836126251543966!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x96663204d40451c5%3A0xd8a5b1756cf46d78!2sCaba%C3%B1as%20en%20Pelluhue%20%22Vuelo%20de%20Gaviotas%22!5e0!3m2!1sen!2sau!4v1744963027323!5m2!1sen!2sau" 
+      width="100%" 
+      height="450" 
+      style="border:0;" 
+      allowfullscreen="" 
+      loading="lazy" 
+      referrerpolicy="no-referrer-when-downgrade"
+      title="Ubicación de Vuelo de Gaviotas - Cabañas en Pelluhue"
+      aria-label="Mapa interactivo mostrando la ubicación de las cabañas en Pelluhue">
+    </iframe>
+  </section>
+
+  <!-- FAQ Section: Preguntas frecuentes con structured data para SEO -->
+  <section id="faq" class="section">
+    <h2>Preguntas Frecuentes</h2>
+    <div class="faq-container">
+      <div class="faq-item">
+        <h3>¿Aceptan mascotas?</h3>
+        <p>Sí, aceptamos mascotas en nuestras cabañas en Pelluhue y Curanipe. Sabemos que son parte importante de tu familia y queremos que disfrutes de tus vacaciones en el sur de Chile con ellos.</p>
+      </div>
+      <div class="faq-item">
+        <h3>¿Cuánto cuesta la tinaja de agua caliente?</h3>
+        <p>La tinaja tiene un costo adicional de $25.000 por hora. Está disponible para todos nuestros huéspedes y es ideal para relajarte después de un día en la playa de Pelluhue o Curanipe.</p>
+      </div>
+      <div class="faq-item">
+        <h3>¿Hay estacionamiento disponible?</h3>
+        <p>Sí, el estacionamiento privado está incluido en el arriendo de nuestras cabañas. No necesitas preocuparte por dónde dejar tu vehículo durante tu estadía en Pelluhue/Curanipe.</p>
+      </div>
+      <div class="faq-item">
+        <h3>¿Qué incluye el arriendo de las cabañas?</h3>
+        <p>El arriendo en Pelluhue/Curanipe incluye la cabaña completamente equipada con cocina, baño privado, habitaciones, y acceso a todas las áreas comunes como quinchos compartidos, áreas verdes y la tinaja (con costo adicional por hora).</p>
+      </div>
+      <div class="faq-item">
+        <h3>¿Están cerca de la playa?</h3>
+        <p>Sí, nuestras cabañas están ubicadas frente al mar en Pelluhue/Curanipe. Solo necesitas cruzar la calle para llegar a una amplia y hermosa playa perfecta para relajarte, hacer surf o disfrutar del sonido de las olas.</p>
+      </div>
+      <div class="faq-item">
+        <h3>¿Cuál es la capacidad máxima de las cabañas?</h3>
+        <p>Ofrecemos cabañas en el sur de Chile con capacidad desde 3 hasta 8 personas. Cada cabaña tiene su descripción detallada con la capacidad específica y las comodidades incluidas.</p>
+      </div>
+      <div class="faq-item">
+        <h3>¿Cómo puedo hacer una reserva?</h3>
+        <p>Puedes reservar el arriendo de nuestras cabañas directamente a través de Booking.com usando el botón "Reservar ahora en Booking" en cada página, o contactarnos directamente por teléfono, WhatsApp o email. Los datos de contacto están en la sección "Contáctanos".</p>
+      </div>
+      <div class="faq-item">
+        <h3>¿Están ubicados en Pelluhue o Curanipe?</h3>
+        <p>Nuestro complejo de cabañas está ubicado entre ambos pueblos, en la zona de Pelluhue/Curanipe, en el sur de Chile. Estamos estratégicamente ubicados frente al mar para que puedas disfrutar de las atracciones y servicios de ambos lugares.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Structured Data para Google -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Aceptan mascotas?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí, aceptamos mascotas en nuestras cabañas en Pelluhue y Curanipe. Sabemos que son parte importante de tu familia y queremos que disfrutes de tus vacaciones en el sur de Chile con ellos."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cuánto cuesta la tinaja de agua caliente?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "La tinaja tiene un costo adicional de $25.000 por hora. Está disponible para todos nuestros huéspedes y es ideal para relajarte después de un día en la playa de Pelluhue o Curanipe."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Hay estacionamiento disponible?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí, el estacionamiento privado está incluido en el arriendo de nuestras cabañas. No necesitas preocuparte por dónde dejar tu vehículo durante tu estadía en Pelluhue/Curanipe."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué incluye el arriendo de las cabañas?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "El arriendo en Pelluhue/Curanipe incluye la cabaña completamente equipada con cocina, baño privado, habitaciones, y acceso a todas las áreas comunes como quinchos compartidos, áreas verdes y la tinaja (con costo adicional por hora)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Están cerca de la playa?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí, nuestras cabañas están ubicadas frente al mar en Pelluhue/Curanipe. Solo necesitas cruzar la calle para llegar a una amplia y hermosa playa perfecta para relajarte, hacer surf o disfrutar del sonido de las olas."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cuál es la capacidad máxima de las cabañas?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ofrecemos cabañas en el sur de Chile con capacidad desde 3 hasta 8 personas. Cada cabaña tiene su descripción detallada con la capacidad específica y las comodidades incluidas."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cómo puedo hacer una reserva?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Puedes reservar el arriendo de nuestras cabañas directamente a través de Booking.com usando el botón \"Reservar ahora en Booking\" en cada página, o contactarnos directamente por teléfono, WhatsApp o email. Los datos de contacto están en la sección \"Contáctanos\"."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Están ubicados en Pelluhue o Curanipe?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Nuestro complejo de cabañas está ubicado entre ambos pueblos, en la zona de Pelluhue/Curanipe, en el sur de Chile. Estamos estratégicamente ubicados frente al mar para que puedas disfrutar de las atracciones y servicios de ambos lugares."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <footer role="contentinfo">
+    <p>&copy; 2025 Vuelo de Gaviotas. Todos los derechos reservados.</p>
+    <!-- Footer: Información de copyright y cierre del sitio -->
+    <!-- role="contentinfo": Ayuda a lectores de pantalla a identificar el footer -->
+  </footer>
+
+  <!-- Scripts: Cargados al final del body para no bloquear el renderizado de la página -->
+  <!-- defer: Ejecuta el script después de que el HTML esté completamente parseado -->
+  <script src="scripts.js" defer></script>
+
+  <div id="lightbox" class="lightbox hidden">
+    <div class="lightbox-content">
+      <button id="close-lightbox" class="close-btn">×</button>
+      <div class="carousel">
+        <button class="nav prev">‹</button>
+        <img id="carousel-image" src="" alt="Foto del servicio">
+        <button class="nav next">›</button>
+      </div>
+    </div>
+  </div>
+  
+</body>
+</html>

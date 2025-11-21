@@ -1,0 +1,14 @@
+# robots.txt: Instrucciones para los buscadores sobre qué páginas pueden indexar
+# Este archivo debe estar en la raíz de tu sitio web
+
+User-agent: *
+# Permite que todos los buscadores indexen todo el sitio
+Allow: /
+
+# Si en el futuro quieres bloquear alguna carpeta, usa:
+# Disallow: /admin/
+# Disallow: /private/
+
+# Ubicación del sitemap (ayuda a los buscadores a encontrar todas tus páginas)
+Sitemap: https://www.vuelodegaviotas.com/sitemap.xml
+

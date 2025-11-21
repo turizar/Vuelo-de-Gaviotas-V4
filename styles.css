@@ -1,0 +1,1284 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  /* Tipografía moderna: Inter para texto general (muy legible y moderna) */
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  scroll-behavior: smooth;
+  background: linear-gradient(180deg, #f8fafb 0%, #f0f7f9 100%);
+  color: #1a2e35;
+  line-height: 1.7;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+/* HEADER */
+header {
+  background: linear-gradient(135deg, #014f68 0%, #016b8c 100%);
+  color: white;
+  padding: 0.5em 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 20px rgba(1, 79, 104, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+
+/* Logo: Contenedor del logo y nombre del sitio */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Poppins', sans-serif; /* Tipografía más destacada para el logo */
+  font-size: 1.3em;
+  font-weight: 700;
+  color: #fff;
+  width: auto;
+  text-align: center;
+  letter-spacing: -0.5px;
+}
+
+.logo img {
+  width: 50px; /* Tamaño de la imagen */
+  height: 33px;
+  margin-right: 10px; /* Espacio entre la imagen y el texto */
+}
+
+
+.logo a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  margin: auto;
+  padding: 0 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: inherit;
+  font-size: 1.2rem;
+  font-weight: 600;
+  width: 100px;
+}
+
+.container a img {
+  width: 50px;
+  height: 33px;
+  margin-right: 10px;
+}
+
+nav ul {
+  display: flex;
+  flex-direction: row;
+  table-layout: fixed;  
+  gap: 2em;
+  list-style: none;
+  margin: 0;
+  border-radius: 12px;
+}
+
+nav li {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  border-radius: 8px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif; /* Consistencia con el logo */
+  font-weight: 500;
+  font-size: 0.95em;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+  padding: 0.7em 1.2em;
+  border-radius: 8px;
+  /* Asegura que el hover cubra todo el área del texto */
+  width: auto;
+  min-width: fit-content;
+}
+
+nav a:hover {
+  color: #a8e0f0;
+  background-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-1px);
+}
+
+/* Mejora sutil: separador visual entre items (opcional, muy sutil) */
+nav li:not(:last-child)::after {
+  content: '';
+  width: 1px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  margin-left: 1.5em;
+  display: none; /* Oculto por defecto, se puede activar si quieres */
+}
+
+
+.menu-toggle {
+  display: none;
+  background: none;
+  color: white;
+  font-size: 1.5em;
+  border: none;
+  cursor: pointer;
+  padding: 0.5em;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.menu-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+
+
+
+/* HERO SECTION - Carrusel */
+
+.hero {
+  position: relative;
+  height: 75vh; /* Más espacio para la imagen */
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end; /* Alinea el overlay al fondo */
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.hero-slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+.hero .overlay {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.65);
+  padding: 0.8em 1.8em;
+  border-radius: 12px;
+  backdrop-filter: blur(8px);
+  animation: fadeIn 1.5s ease-in-out;
+  max-width: 85%;
+  width: auto;
+}
+
+/* Flechas del carrusel */
+.carousel-control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.4);
+  border: none;
+  color: white;
+  font-size: 2em;
+  padding: 0.5em 0.8em;
+  cursor: pointer;
+  z-index: 3;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.carousel-control:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.carousel-control.left {
+  left: 1em;
+}
+
+.carousel-control.right {
+  right: 1em;
+}
+
+.hero h1 {
+  font-family: 'Poppins', sans-serif; /* Tipografía destacada para títulos */
+  font-size: 2.2em; /* Más compacto */
+  color: #fff;
+  margin-bottom: 0.3em;
+  font-weight: 700;
+  text-shadow: 2px 3px 6px rgba(0,0,0,0.5);
+  letter-spacing: -0.5px;
+  line-height: 1.15;
+}
+
+
+.hero-subtitle {
+  font-size: 1em; /* Más compacto */
+  color: rgba(255, 255, 255, 0.95);
+  margin-bottom: 0.8em; /* Menos espacio */
+  text-shadow: 1px 2px 4px rgba(0,0,0,0.4);
+  font-weight: 400;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.4;
+}
+
+.btn-hero {
+  background: linear-gradient(135deg, #ff7e5f 0%, #ff6b47 100%);
+  color: white;
+  padding: 0.75em 2em; /* Más compacto */
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1em;
+  display: inline-block;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 18px rgba(255, 126, 95, 0.4);
+  border: none;
+  cursor: pointer;
+  letter-spacing: 0.2px;
+}
+
+.btn-hero:hover {
+  background: linear-gradient(135deg, #ff6b47 0%, #e66a4b 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(255, 126, 95, 0.5);
+}
+
+/* Botón de reserva en Booking.com - Estilo destacado */
+.btn-booking {
+  background: linear-gradient(135deg, #003580 0%, #004a9f 100%);
+  color: white;
+  padding: 1em 2.5em;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1.1em;
+  display: inline-block;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 20px rgba(0, 53, 128, 0.4);
+  border: none;
+  cursor: pointer;
+  letter-spacing: 0.3px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.btn-booking:hover {
+  background: linear-gradient(135deg, #004a9f 0%, #0056b8 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 53, 128, 0.5);
+}
+
+/* Botón secundario de contacto - Estilo más sutil */
+.btn-contact {
+  background: transparent;
+  color: #014f68;
+  padding: 0.7em 2em;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 500;
+  font-size: 0.95em;
+  display: inline-block;
+  transition: all 0.3s ease;
+  border: 2px solid #014f68;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+}
+
+.btn-contact:hover {
+  background: #014f68;
+  color: white;
+  transform: translateY(-2px);
+}
+
+
+#aboutus h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.5em;
+  color: #014f68;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+#aboutus p {
+  font-size: 1.15em;
+  line-height: 1.9;
+  color: #2c3e50;
+  text-align: center;
+  padding-bottom: 1em;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.btn {
+  background-color: #ff7e5f;
+  color: white;
+  padding: 0.75em 1.5em;
+  margin-top: 1em;
+  text-decoration: none;
+  border-radius: 0.5em;
+  display: inline-block;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #e66a4b;
+}
+
+/* Sections */
+.section {
+  padding: 3em 1em;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.section h2 {
+  font-family: 'Poppins', sans-serif; /* Tipografía destacada para títulos */
+  text-align: center;
+  margin-bottom: 1em;
+  font-size: 2.5em;
+  color: #014f68;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+}
+
+.section-intro {
+  text-align: center;
+  font-size: 1.15em;
+  color: #555;
+  margin-bottom: 2em;
+  line-height: 1.7;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Grid Layout Fix for Cabins */
+
+.grid {
+  display: grid;
+  gap: 2em;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+/* Ensure Card Uniformity */
+.card {
+  background: #ffffff;
+  padding: 0;
+  border-radius: 16px;
+  text-align: center;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(1, 79, 104, 0.08);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 0;
+  margin-bottom: 0;
+  object-fit: cover;
+  height: 220px;
+  transition: transform 0.4s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(1, 79, 104, 0.15);
+  border-color: rgba(1, 79, 104, 0.2);
+}
+
+.card:hover img {
+  transform: scale(1.05);
+}
+
+.card h3 {
+  padding: 1.2em 1.2em 0.5em 1.2em;
+  margin-bottom: 0.5em;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.3em;
+  color: #014f68;
+  font-weight: 600;
+}
+
+.card p {
+  padding: 0 1.2em 0.8em 1.2em;
+  margin-bottom: 0;
+  font-size: 1em;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Texto sutil "Ver detalles" al final de cada card */
+.card-link-text {
+  display: block;
+  text-align: center;
+  font-size: 0.85em;
+  color: #014f68;
+  font-weight: 500;
+  padding: 0.3em 1.2em 1.2em 1.2em;
+  opacity: 0.7;
+  transition: opacity 0.3s ease, color 0.3s ease;
+  margin-top: auto;
+}
+
+.card:hover .card-link-text {
+  opacity: 1;
+  color: #016b8c;
+}
+
+.card h3 a {
+  all: unset;
+  display: block;
+  cursor: pointer;
+}
+
+/* Estilos para que el enlace no tenga subrayado ni color */
+.card a {
+  text-decoration: none;  /* Quita el subrayado */
+  color: inherit;         /* Hereda el color del texto del h3 */
+}
+
+.card a:hover {
+  color: inherit;         /* Mantiene el mismo color al hacer hover */
+}
+
+#cabins .card p {
+  font-size: 1.05em;
+}
+
+#cabins .card{
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* Servicios Section Fix */
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1em;
+  list-style: none;
+  padding: 2em;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* En pantallas grandes, mostrar las 5 en una línea */
+@media (min-width: 1200px) {
+  .features {
+    flex-wrap: nowrap;
+    gap: 1.2em;
+  }
+  
+  .features li {
+    flex: 1;
+    min-width: 0; /* Permite que se ajusten uniformemente */
+  }
+}
+
+.features li {
+  background: linear-gradient(135deg, #014f68 0%, #016b8c 100%);
+  color: white;
+  padding: 1.2em 1.5em;
+  border-radius: 12px;
+  font-size: 1.05em;
+  font-weight: 500;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(1, 79, 104, 0.3);
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3em;
+  position: relative;
+  text-align: center;
+}
+
+.features li span {
+  display: block;
+}
+
+.features li small {
+  font-size: 0.7em;
+  opacity: 0.8;
+  font-weight: 400;
+  margin-top: 0.2em;
+}
+
+.features li:hover {
+  background: linear-gradient(135deg, #016b8c 0%, #0180a8 100%);
+  box-shadow: 0 8px 25px rgba(1, 79, 104, 0.4);
+  transform: translateY(-4px) scale(1.02);
+}
+
+.features li:active {
+  transform: translateY(-2px) scale(1.01);
+}
+
+
+
+/* Surroundings Section */
+#surroundings {
+  padding: 3em 1em;
+  max-width: 1200px;
+  margin: auto;
+}
+
+#surroundings h2 {
+  text-align: center;
+  font-size: 2em;
+  color: #014f68;
+  margin-bottom: 1.5em;
+}
+
+#surroundings p {
+  font-size: 1.1em;
+  line-height: 1.8;
+  color: #333;
+  text-align: center;
+  margin-bottom: 1.5em;
+}
+
+#surroundings img {
+  width: 100%;
+  border-radius: 1em;
+  margin: 2em 0;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+}
+
+#surroundings .card h3 {
+  color: #004c75; /* Ajusta el color que prefieras */
+}
+
+#surroundings .card p {
+  font-size: 1.05em;
+}
+
+/* Contact Section Styling */
+.contact-info {
+  text-align: center;
+  margin-bottom: 2em;
+}
+
+.contact-intro {
+  text-align: center;
+  font-size: 1.15em;
+  color: #555;
+  margin-bottom: 2em;
+  line-height: 1.7;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact-phones,
+.contact-emails {
+  font-size: 1.2em;
+  margin-bottom: 0.8em;
+  color: #002c3e;
+}
+
+.contact-phones a,
+.contact-emails a {
+  color: #014f68;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.contact-phones a:hover,
+.contact-emails a:hover {
+  color: #ff7e5f;
+  text-decoration: underline;
+}
+
+.contact-cta {
+  font-size: 1.1em;
+  color: #014f68;
+  margin-top: 1.5em;
+  font-weight: 500;
+}
+
+
+/* Botón para volver al inicio - Al final de cada página de cabaña */
+.back-to-home {
+  text-align: center;
+  padding: 2em 1em;
+  margin-top: 3em;
+}
+
+.btn-back-home {
+  display: inline-block;
+  color: #014f68;
+  text-decoration: none;
+  font-size: 1em;
+  font-weight: 500;
+  padding: 0.8em 2em;
+  border: 2px solid #014f68;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  font-family: 'Inter', sans-serif;
+  background: white;
+}
+
+.btn-back-home:hover {
+  background: #014f68;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(1, 79, 104, 0.3);
+}
+
+/* Footer */
+footer {
+  background: linear-gradient(135deg, #014f68 0%, #013a4d 100%);
+  color: white;
+  text-align: center;
+  padding: 2em 0;
+  margin-top: 0;
+  font-size: 0.95em;
+}
+
+/* Responsive para páginas de cabañas */
+@media (max-width: 768px) {
+  .gallery-container {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .gallery-container img {
+    height: 250px;
+  }
+  
+  .description {
+    padding: 0.5em 1em;
+    margin-top: 0;
+  }
+
+  .description h1 {
+    font-size: 1.2em;
+    margin-bottom: 0.2em;
+    line-height: 1.15;
+  }
+
+  .description p {
+    font-size: 0.9em;
+    margin-bottom: 0;
+    line-height: 1.4;
+  }
+  
+  .gallery {
+    padding: 0.8em 0.2em 2em 0.2em;
+  }
+  
+  .gallery h3 {
+    font-size: 0.8em;
+    margin-bottom: 0.8em;
+    letter-spacing: -0.6px;
+    line-height: 1.2;
+    white-space: nowrap;
+    padding: 0 0.3em;
+  }
+  
+  .summary {
+    padding: 1em 0;
+  }
+  
+  .summary h3 {
+    font-size: 1.1em;
+    margin-bottom: 0.8em;
+    text-align: center;
+    white-space: normal;
+  }
+  
+  .services-box {
+    padding: 1em;
+  }
+  
+  .services-list {
+    gap: 0.5em;
+  }
+  
+  .services-list li {
+    font-size: 0.85em;
+    padding: 0.4em;
+  }
+  
+  .services-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  /* Hero más compacto en móvil */
+  .hero {
+    height: 70vh; /* Más espacio para la imagen en móvil también */
+  }
+
+  .hero .overlay {
+    bottom: 15px;
+    padding: 0.6em 1em;
+    max-width: 96%; /* Más ancho para que el texto quepa mejor */
+    width: auto;
+  }
+
+  .hero h1 {
+    font-size: 1.15em; /* Tamaño optimizado para que quepa en una línea */
+    margin-bottom: 0.25em;
+    line-height: 1.2;
+    letter-spacing: -0.3px; /* Espaciado más compacto */
+  }
+
+  /* En pantallas muy pequeñas, reducir aún más */
+  @media (max-width: 380px) {
+    .hero h1 {
+      font-size: 1.05em;
+      line-height: 1.15;
+    }
+  }
+
+  .hero-subtitle {
+    font-size: 0.85em;
+    margin-bottom: 0.6em;
+    display: none; /* Ocultamos el subtítulo en móvil para ahorrar espacio */
+  }
+
+  .btn-hero {
+    font-size: 0.9em;
+    padding: 0.65em 1.6em;
+  }
+
+  nav ul {
+    flex-direction: column;
+    background: linear-gradient(135deg, #014f68 0%, #016b8c 100%);
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 220px;
+    display: none;
+    gap: 0;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+  }
+
+  nav ul.show {
+    display: flex;
+  }
+
+  nav li {
+    display: block;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  nav li:last-child {
+    border-bottom: none;
+  }
+
+  nav a {
+    padding: 1.2em 1.5em;
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    border-radius: 0;
+    display: block;
+    box-sizing: border-box;
+    text-align: left;
+  }
+
+  nav a:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  /* Mejora para mantener formato y color de las tarjetas */
+  .grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    padding: 0 1em;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .card img {
+    height: auto;
+    max-height: 200px;
+  }
+
+  .features {
+    display: block;
+    text-align: center;
+  }
+
+  /* Ajustes para features li */
+  .features li {
+    touch-action: manipulation; /* Mejor respuesta táctil */
+    margin-bottom: 0.75em;       /* Más espacio entre items */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25); /* Sombra más fuerte */
+    border-radius: 0.8em;      /* Para que la sombra luzca mejor */
+    transition: box-shadow 0.3s, transform 0.2s, background-color 0.3s;
+  }
+
+  .features li:active {
+    transform: translateY(2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4) inset; /* Sombra más marcada al presionar */
+    background-color: #013f55;
+  }
+
+  /* Botones de reserva en móvil */
+  .btn-booking {
+    font-size: 1em;
+    padding: 0.9em 2em;
+    width: 90%;
+    max-width: 300px;
+  }
+
+  .btn-contact {
+    font-size: 0.9em;
+    padding: 0.6em 1.8em;
+    width: 90%;
+    max-width: 300px;
+  }
+
+  /* Botón volver al inicio en móvil */
+  .back-to-home {
+    padding: 1.5em 1em;
+    margin-top: 2em;
+  }
+
+  .btn-back-home {
+    font-size: 0.95em;
+    padding: 0.7em 1.8em;
+    width: 90%;
+    max-width: 280px;
+  }
+
+}
+
+/* Evitar que las cards dentro de surroundings se levanten */
+#surroundings .card:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+/* Whatsapp Icon*/
+.whatsapp-float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25D366;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  background-color: #1ebe5d;
+}
+
+.whatsapp-icon {
+  width: 30px;
+  height: 30px;
+}
+
+/* Call Icon*/
+
+/* Contenedor de los botones de llamada */
+.call-buttons {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  display: flex;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Botón de llamada principal */
+.primary-call {
+  width: 60px;
+  height: 60px;
+  background-color: #2196F3;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s;
+  z-index: 2;
+}
+
+.primary-call:hover {
+  transform: scale(1.1);
+  background-color: #1e88e5;
+}
+
+/* Botón de llamada secundaria (inicialmente oculto) */
+.secondary-call {
+  width: 45px;
+  height: 45px;
+  background-color: #1e88e5;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0.5);
+  transition: all 0.3s ease;
+  margin-left: 10px;
+}
+
+/* Clase activa que se agrega por JS cuando se expande */
+.call-buttons.expanded .secondary-call {
+  opacity: 0.8;
+  visibility: visible;
+  transform: scale(1);
+}
+
+/* Iconos */
+.call-icon {
+  width: 35px;
+  height: 35px;
+}
+
+.call-icon-2 {
+  width: 35px;
+  height: 35px;
+}
+
+/* Lightbox general */
+.lightbox {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* Ocultar por defecto */
+.hidden {
+  display: none;
+}
+
+/* Contenedor de contenido */
+.lightbox-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 80%;
+  background: #fff;
+  padding: 1em;
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+}
+
+/* Imagen central */
+#carousel-image {
+  max-width: 100%;
+  max-height: 70vh;
+  border-radius: 10px;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Flechas */
+.nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.4);
+  color: #fff;
+  font-size: 2em;
+  border: none;
+  cursor: pointer;
+  padding: 0.5em;
+  z-index: 10;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+/* Botón cerrar - Más visible */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 2em;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 50%;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  z-index: 10001;
+}
+
+
+
+
+/* CABINS DETAILS */
+
+/* Description */
+.description {
+  padding: 1.2em 2em;
+  margin: auto;
+  text-align: center;
+  max-width: 900px;
+}
+
+.description h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2em;
+  color: #014f68;
+  margin-bottom: 0.3em;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+}
+
+.description h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.5em;
+  color: #014f68;
+  margin-bottom: 1em;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.description p {
+  font-size: 1.05em;
+  color: #2c3e50;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Services summary */
+.summary {
+  padding: 1.5em 2em;
+  margin: auto;
+  text-align: center;
+  max-width: 900px;
+}
+
+/* Título */
+.summary h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.6em;
+  color: #014f68;
+  margin-bottom: 1em;
+  font-weight: 600;
+  letter-spacing: -0.3px;
+}
+
+/* Recuadro compacto con diseño moderno */
+.services-box {
+  background: linear-gradient(135deg, #014f68 0%, #016b8c 100%);
+  color: white;
+  padding: 1.2em;
+  border-radius: 16px;
+  margin: auto;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(1, 79, 104, 0.2);
+}
+
+/* Lista organizada en grid para mejor distribución */
+.services-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.6em;
+  padding: 0;
+  margin: 0;
+}
+
+.services-list li {
+  font-size: 0.95em;
+  padding: 0.5em;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.services-list li:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+/*Diseño de Imagenes*/
+/* Galería */
+
+.gallery {
+  padding: 1.5em 2em 3em 2em;
+  margin: auto;
+  text-align: center;
+  max-width: 1200px;
+}
+
+.gallery h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.6em;
+  color: #014f68;
+  margin-bottom: 1em;
+  font-weight: 600;
+  letter-spacing: -0.3px;
+}
+
+/* Contenedor con grid inteligente para mejor distribución */
+.gallery-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5em;
+  margin: 0 auto;
+}
+
+/* Para evitar que queden 5 arriba y 1 abajo, usamos grid con mejor distribución */
+/* Si hay 6 imágenes, se distribuyen en 3 columnas (2 filas) o 2 columnas (3 filas) */
+@media (min-width: 900px) {
+  .gallery-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .gallery-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Imágenes con tamaño uniforme y mejor diseño */
+.gallery-container img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+/* Efecto al pasar el mouse */
+.gallery-container img:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(1, 79, 104, 0.2);
+  border-color: rgba(1, 79, 104, 0.3);
+}
+
+/* FAQ Section */
+#faq {
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafb 100%);
+}
+
+.faq-container {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+}
+
+.faq-item {
+  background: white;
+  padding: 1.5em 2em;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(1, 79, 104, 0.1);
+  transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+  box-shadow: 0 8px 25px rgba(1, 79, 104, 0.15);
+  transform: translateY(-2px);
+}
+
+.faq-item h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.3em;
+  color: #014f68;
+  margin-bottom: 0.8em;
+  font-weight: 600;
+}
+
+.faq-item p {
+  color: #2c3e50;
+  line-height: 1.7;
+  font-size: 1.05em;
+}
+
+@media (max-width: 768px) {
+  .faq-item {
+    padding: 1.2em 1.5em;
+  }
+  
+  .faq-item h3 {
+    font-size: 1.1em;
+  }
+  
+  .faq-item p {
+    font-size: 0.95em;
+  }
+}
+
+
