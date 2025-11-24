@@ -1319,4 +1319,15 @@ footer {
   }
 }
 
+/* Ajuste para pantallas 320px - services-list dentro de services-box */
+@media (max-width: 320px) {
+  .services-list {
+    grid-template-columns: 1fr;
+  }
+
+  .description h1 {
+    font-size: 1.188em; /* Reducción del 1% desde 1.2em */
+  }
+}
+
 
