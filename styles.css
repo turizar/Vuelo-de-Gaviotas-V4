@@ -15,6 +15,9 @@ body, html {
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
 }
 
 
@@ -714,6 +717,16 @@ footer {
     white-space: nowrap;
     padding: 0 0.3em;
   }
+
+  /* Ajuste específico para pantallas 360px - reducir h3 de galería */
+  @media (max-width: 360px) {
+    .gallery h3 {
+      font-size: 1.1em;
+      white-space: normal;
+      line-height: 1.3;
+      padding: 0 0.5em;
+    }
+  }
   
   .summary {
     padding: 1em 0;
@@ -770,6 +783,22 @@ footer {
     .hero h1 {
       font-size: 1.05em;
       line-height: 1.15;
+    }
+  }
+
+  /* Ajuste específico para pantallas 360px - reducir títulos con Pelluhue/Curanipe */
+  @media (max-width: 360px) {
+    .hero h1 {
+      font-size: 0.95em;
+      line-height: 1.1;
+    }
+
+    #aboutus h2 {
+      font-size: 1.8em;
+    }
+
+    .section h2 {
+      font-size: 1.8em;
     }
   }
 
@@ -1278,6 +1307,15 @@ footer {
   
   .faq-item p {
     font-size: 0.95em;
+  }
+}
+
+/* Ajuste específico para pantallas 360px - reducir h3 de galería */
+@media (max-width: 360px) {
+  .gallery h3 {
+    font-size: 1.1em;
+    white-space: normal;
+    line-height: 1.3;
   }
 }
 
